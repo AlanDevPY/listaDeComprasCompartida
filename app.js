@@ -19,7 +19,7 @@ btnGuardar.addEventListener('click', () => {
 
 // Creamos la funcion para mostrat los productos agregados
 window.addEventListener("DOMContentLoaded", async () => {
-    let taskContainer = document.getElementById("task-container");
+    let tBody = document.getElementById("tBody");
     // Llamar a la función onGetTask cuando se obtienen las tareas de la base de datos
     obtenerProductos((querySnapshot) => {
       let html = ""; // Variable para almacenar el HTML generado
@@ -39,23 +39,21 @@ window.addEventListener("DOMContentLoaded", async () => {
       // Generar el HTML para cada tarea y agregarlo a la variable 'html'
       tasks.forEach((task) => {
         html += `
-        <div class="card m-1 col-12 col-md-3">
-        <div class="card-body">
-        <p class="text-danger">${task.time}</p>
-          <h4 class="card-title">${task.producto}</h4>
-          <h6 class="card-text">cantidad : ${task.cantidad}</h6>
-          <p class="card-text"> Agregado por : ${task.persona}</p>
-          <button data-id="${task.id}" class="btn btn-danger">Terminado</button>
-        </div>
-      </div>
+        <tr>
+        <th scope="row">${task.time}</th>
+        <td>${task.producto}</td>
+        <td>${task.cantidad}</td>
+        <td>${task.persona}</td>
+        <td> <button data-id="${task.id}" class="btn btn-danger">Terminado</button></td>
+      </tr>
            `;
       });
   
       // Insertar el HTML generado en el contenedor de tareas en el DOM
-      taskContainer.innerHTML = html;
+      tBody.innerHTML = html;
   
       // Obtener todos los botones de borrado dentro del contenedor de tareas
-      const btnDelet = taskContainer.querySelectorAll(".btn");
+      const btnDelet = tBody.querySelectorAll(".btn");
       
       // Agregar un evento de clic a cada botón de borrado
       btnDelet.forEach((btn) => {
