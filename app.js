@@ -44,7 +44,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         <td>${task.producto}</td>
         <td>${task.cantidad}</td>
         <td>${task.persona}</td>
-        <td> <button data-id="${task.id}" class="btn btn-danger">Terminado</button></td>
+        <td> <button data-id="${task.id}" class="btn btn-danger btn-sm">Terminado</button></td>
       </tr>
            `;
       });
