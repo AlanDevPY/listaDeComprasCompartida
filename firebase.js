@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -47,3 +47,8 @@ export const agregarProducto = (producto, cantidad, persona) => {
 }
 
 
+// funcion de obtener productos de la base de datos de Firestore
+export const obtenerProductos = (callback) => onSnapshot(collection(db,'listaDeCompras'),callback)
+
+// funcion para eliminar datos de la base de datos
+export const borrarProducto = (id) => deleteDoc(doc(db,'listaDeCompras',id));
