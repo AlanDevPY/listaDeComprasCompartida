@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         <th scope="row">${task.time}</th>
         <td>${task.producto}</td>
         <td>${task.cantidad}</td>
-        <td>${task.persona}</td>
+        <td>${task.persona.charAt(0).toUpperCase() + task.persona.slice(1)}</td>
         <td> <button data-id="${task.id}" class="btn btn-danger btn-sm">Terminado</button></td>
       </tr>
            `;
