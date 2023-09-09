@@ -9,15 +9,12 @@ btnGuardar.addEventListener('click', () => {
     let producto = document.getElementById('inputProducto').value;
     let cantidad = document.getElementById('inputCantidad').value;
 
-    agregarProducto(persona, producto, cantidad) // agregamos los datos a la base de datos de firestore
+    agregarProducto(producto, cantidad,persona) // agregamos los datos a la base de datos de firestore
     
     // con esto reseteamos el form en blanco
     document.getElementById('selectorName').value = '';
     document.getElementById('inputProducto').value = '';
     document.getElementById('inputCantidad').value = '';
 })
-
-// Creamos la funcion para mostrat los productos agregados
-
 
 
