@@ -70,11 +70,13 @@ window.addEventListener("DOMContentLoaded", async () => {
 // LOGICA DE ENVIO DE MENSAJE CON JQUERY
 $("#btnGuardar").click(function () {
   var mensajes = $("#inputProducto").val();
+  var numero = $("#inputCantidad").val();
+  console.log(numero);
   console.log(mensajes);
   var chat = {
     secret: "fc86a086e03f9260d2504bc3ee437864e82e183a",
     account: "16942565446c8349cc7260ae62e3b1396831a8398f64fc4da0bd912",
-    recipient: "595986862498",
+    recipient: numero,
     type: "text",
     message: mensajes, // Aquí debes proporcionar el mensaje que deseas enviar
   }; // Cierra correctamente la definición del objeto chat
